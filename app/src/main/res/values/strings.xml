@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ProyectoFinal</string>
+    <!--    Login View   -->
+    <string name="login_email">Email</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_confirm_password">Confirmar Contraseña</string>
+    <string name="login_sign_in">Ingresar</string>
+    <string name="login_sign_up">Registrarse</string>
+    <string name="login_reset_password">Reiniciar mi contraseña</string>
+    <string name="login_sign_in_google">Ingresar con Google</string>
+    <string name="login_forgot_password">Me olvide mi contraseña</string>
+    <string name="login_create_account">Crear una nueva cuenta</string>
+    <string name="login_go_login">Volver al login</string>
+
+
+</resources>

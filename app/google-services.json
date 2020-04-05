@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "484622413830",
+    "firebase_url": "https://cursokotlinapp.firebaseio.com",
+    "project_id": "cursokotlinapp",
+    "storage_bucket": "cursokotlinapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484622413830:android:8e866c316685a1a9c95387",
+        "android_client_info": {
+          "package_name": "com.jparnaudo.finalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484622413830-s1297s30me2klfcb5o022c7qbmfsumju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVh3l49m-StYe40Hk3SkqIzyF1LC3OcO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484622413830-s1297s30me2klfcb5o022c7qbmfsumju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
