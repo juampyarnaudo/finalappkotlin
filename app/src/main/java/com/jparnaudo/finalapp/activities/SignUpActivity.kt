@@ -40,23 +40,33 @@ class SignUpActivity : AppCompatActivity() {
         buttonSignUp.setOnClickListener {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
-            if (isValidEmailAndPassword(email, password)) {
-//                estamos pasando el email y password cargado en los campos.
+            val confirmPassword = editTextConfirmPassword.text.toString()
+            if (isValidEmail(email) && isValidPassword(password) && isValidConfirmPassword(
+                    password,
+                    confirmPassword
+                )
+            ) {
+                //estamos pasando el email y password cargado en los campos.
                 signUpbyEmail(email, password)
             } else
                 toast("Por favor verifica que los campos estén correctos..")
         }
-        editTextEmail.validate{
+        editTextEmail.validate {
 //            is es lo mismo que decir editTextEmail.text.toString()
             editTextEmail.error = if (isValidEmail(it)) null else "El Mail es Invalido"
         }
-        editTextPassword.validate{
+        editTextPassword.validate {
 //            is es lo mismo que decir editTextEmail.text.toString()
-            editTextPassword.error = if (isValidPassword(it)) null else "La contraseña debe contener 6 caracteres o más, incluyendo como minimo  con 1 minuscula, 1 mayuscula, 1 número"
+            editTextPassword.error =
+                if (isValidPassword(it)) null else "La contraseña debe contener 6 caracteres o más, incluyendo como minimo  con 1 minuscula, 1 mayuscula, 1 número"
         }
-        editTextConfirmPassword.validate{
+        editTextConfirmPassword.validate {
 //            is es lo mismo que decir editTextEmail.text.toString()
-            editTextConfirmPassword.error = if (isValidConfirmPassword(editTextPassword.text.toString(),it)) null else "La contraseña no son iguales"
+            editTextConfirmPassword.error = if (isValidConfirmPassword(
+                    editTextPassword.text.toString(),
+                    it
+                )
+            ) null else "La contraseña no son iguales"
         }
 
     }
@@ -64,24 +74,20 @@ class SignUpActivity : AppCompatActivity() {
     private fun signUpbyEmail(email: String, password: String) {
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                toast("Por favor confirmar el mail.")
-                goToActivity<LoginActivity> {
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                // Esto hace que envie un mail a su correo para verificarlo
+                mAuth.currentUser!!.sendEmailVerification().addOnCompleteListener(this) {
+                    toast("Por favor confirmar el mail.")
+                    goToActivity<LoginActivity> {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+                    }
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 }
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
 
             } else {
                 toast("Ocurrió un error, por favor intenta nuevamente")
             }
         }
-    }
-
-    private fun isValidEmailAndPassword(email: String, password: String): Boolean {
-//        si el Email o pass es nulo o vacio me devuelve falso. tiene que ser verdadero para que retorne.
-//        Email , pass y confir no sean nulos o vacios. Además pass y confirm pass sea exactamente iguales.
-        return !email.isNullOrEmpty() &&
-                !password.isNullOrEmpty() &&
-                password == editTextConfirmPassword.text.toString()
     }
 
 }
