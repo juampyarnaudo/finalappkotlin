@@ -88,7 +88,12 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
         val credential = GoogleAuthProvider.getCredential(googleAccount.idToken, null)
 //        Hacemos el login con las credenciales de google.
         mAuth.signInWithCredential(credential).addOnCompleteListener(this){
-            toast("Has ingresado con tu cuenta de Google!")
+            if (mGoogleApiClient.isConnected) {
+                Auth.GoogleSignInApi.signOut(mGoogleApiClient)
+            }
+            goToActivity<MainActivity> {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
         }
     }
 
