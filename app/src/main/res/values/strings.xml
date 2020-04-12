@@ -12,5 +12,8 @@
     <string name="login_create_account">Crear una nueva cuenta</string>
     <string name="login_go_login">Volver al login</string>
 
-
+<!--    Bottom Navigation Menu   -->
+    <string name="navigation_bottom_info">Info</string>
+    <string name="navigation_bottom_rates">Rates</string>
+    <string name="navigation_bottom_chat">Chat</string>
 </resources>

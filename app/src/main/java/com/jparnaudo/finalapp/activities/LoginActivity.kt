@@ -87,7 +87,7 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
 //de esta forma recibimos las credenciales.
         val credential = GoogleAuthProvider.getCredential(googleAccount.idToken, null)
 //        Hacemos el login con las credenciales de google.
-        mAuth.signInWithCredential(credential).addOnCompleteListener(this){
+        mAuth.signInWithCredential(credential).addOnCompleteListener(this) {
             if (mGoogleApiClient.isConnected) {
                 Auth.GoogleSignInApi.signOut(mGoogleApiClient)
             }
@@ -104,10 +104,7 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
                 if (mAuth.currentUser!!.isEmailVerified) {
                     toast("Usuario Logeado")
                 } else {
-
                     toast("Debes verificar el email.")
-
-
 //                    toast("Bienvenido ${mAuth.currentUser.toString()}!!")
 //                    val currentUser = mAuth.currentUser!!
 //                    currentUser.displayName
