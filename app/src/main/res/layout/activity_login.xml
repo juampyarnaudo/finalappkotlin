@@ -110,11 +110,12 @@
             android:id="@+id/imageView2"
             android:layout_width="225dp"
             android:layout_height="217dp"
-            android:src="@drawable/bistro"
+            android:src="@drawable/logo_p22"
             app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_p22" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

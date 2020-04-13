@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#474A4C</color>
     <color name="colorPrimaryDark">#2D3237</color>
-    <color name="colorAccent">#FF771C</color>
-    <color name="colorAccentDark">#FFC85D15</color>
+    <color name="colorAccent">#1EC518</color>
+    <color name="colorAccentDark">#179112</color>
     <color name="colorPrimaryText">#FFFFFF</color>
     <color name="colorSecondaryText">#BDBDBD</color>
     <color name="colorTextBlack">#222</color>
@@ -14,5 +14,7 @@
     <color name="colorGooglePlus">#DD4B39</color>
     <color name="colorGooglePlusDark">#B92D21</color>
     <color name="colorBackgroundBlack">#000000</color>
+
+    <color name="white">#FFF</color>
 
 </resources>

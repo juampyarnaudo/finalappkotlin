@@ -16,4 +16,6 @@
     <string name="navigation_bottom_info">Info</string>
     <string name="navigation_bottom_rates">Rates</string>
     <string name="navigation_bottom_chat">Chat</string>
+
+    <string name="chat_edittext_message_hint">Escribe un mensaje...</string>
 </resources>
